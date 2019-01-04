@@ -29,8 +29,8 @@ defmodule StreamDataExampleTest do
       end
     # end
     # property "Returns error non-numeric inputs" do
-      check all thing <- any(), not(is_integer(thing)) do
-        assert {:error, _} = call.(num)
+      check all thing <- term(), not(is_integer(thing)) do
+        assert {:error, _} = call.(thing)
       end
     # end
   end
